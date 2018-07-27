@@ -1,0 +1,767 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    
+</head>
+<body>
+    <div class="row mt-4">
+        <div class="col">
+            <h2 class="text-center">Stresstest</h2>
+        </div>
+    </div>
+
+    <div class=" mt-4 mx-3">
+        <div class="row">
+            <div class="col">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col" rowspan="2">
+                                <div class="row">
+                                    <div class="col">Stresssymptome</div>
+                                    <div class="col text-right">Reaktionen</div>
+                                </div>
+                            </th>
+                            <th scope="col" colspan="4">Haufigkeitsgrad</th>
+                            <th scope="col" colspan="4">Starkegrad</th>
+                            <th scope="col">Punkte</th>
+                        </tr>
+                        <tr>
+                            <td scope="col">1</td>
+                            <td scope="col">2</td>
+                            <td scope="col">3</td>
+                            <td scope="col">4</td>
+                            <td scope="col">1</td>
+                            <td scope="col">2</td>
+                            <td scope="col">3</td>
+                            <td scope="col">4</td>
+                            <td scope="col"></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row">
+                                1. Empfindlicher Magen, Vollegefuhl, Magendrucken
+                            </td>
+                            <td><input type="radio" name="1_f" value="1" id="1_1" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="1_f" value="2" id="1_2" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="1_f" value="3" id="1_3" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="1_f" value="4" id="1_4" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="1_g" value="1" id="1_5" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="1_g" value="2" id="1_6" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="1_g" value="3" id="1_7" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="1_g" value="4" id="1_8" onchange="calculatePointsTotal(this);"></td>
+                            <td id="1_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                2. Angstgefuhle, ohne dass ein konkreter Grund vorliegt
+                            </td>
+                            <td><input type="radio" name="2_f" value="1" id="2_1" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="2_f" value="2" id="2_2" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="2_f" value="3" id="2_3" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="2_f" value="4" id="2_4" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="2_g" value="1" id="2_5" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="2_g" value="2" id="2_6" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="2_g" value="3" id="2_7" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="2_g" value="4" id="2_8" onchange="calculatePointsTotal(this);"></td>
+                            <td id="2_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                3. Muskelkrampfe, auch ohne korperliche Anstrengung
+                            </td>
+                            <td><input type="radio" name="3_f" value="1" id="3_1" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="3_f" value="2" id="3_2" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="3_f" value="3" id="3_3" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="3_f" value="4" id="3_4" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="3_g" value="1" id="3_5" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="3_g" value="2" id="3_6" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="3_g" value="3" id="3_7" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="3_g" value="4" id="3_8" onchange="calculatePointsTotal(this);"></td>
+                            <td id="3_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                4. Konzentrationsstorungen, Gedanken reissen ab
+                            </td>
+                            <td><input type="radio" name="4_f" value="1" id="4_1" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="4_f" value="2" id="4_2" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="4_f" value="3" id="4_3" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="4_f" value="4" id="4_4" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="4_g" value="1" id="4_5" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="4_g" value="2" id="4_6" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="4_g" value="3" id="4_7" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="4_g" value="4" id="4_8" onchange="calculatePointsTotal(this);"></td>
+                            <td id="4_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                5. Kalte Hande oder Fusse ohne aussere Einflusse
+                            </td>
+                            <td><input type="radio" name="5_f" value="1" id="5_1" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="5_f" value="2" id="5_2" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="5_f" value="3" id="5_3" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="5_f" value="4" id="5_4" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="5_g" value="1" id="5_5" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="5_g" value="2" id="5_6" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="5_g" value="3" id="5_7" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="5_g" value="4" id="5_8" onchange="calculatePointsTotal(this);"></td>
+                            <td id="5_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                6. Stotteransatze in bestimmten kritischen Situationen
+                            </td>
+                            <td><input type="radio" name="6_f" value="1" id="6_1" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="6_f" value="2" id="6_2" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="6_f" value="3" id="6_3" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="6_f" value="4" id="6_4" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="6_g" value="1" id="6_5" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="6_g" value="2" id="6_6" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="6_g" value="3" id="6_7" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="6_g" value="4" id="6_8" onchange="calculatePointsTotal(this);"></td>
+                            <td id="6_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                7. Mudigkeit, obwohl lange genug und fest geschlafen
+                            </td>
+                            <td><input type="radio" name="7_f" value="1" id="7_1" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="7_f" value="2" id="7_2" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="7_f" value="3" id="7_3" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="7_f" value="4" id="7_4" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="7_g" value="1" id="7_5" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="7_g" value="2" id="7_6" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="7_g" value="3" id="7_7" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="7_g" value="4" id="7_8" onchange="calculatePointsTotal(this);"></td>
+                            <td id="7_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                8. Ideenflucht - com Hundertsten ins Tausendste kommen
+                            </td>
+                            <td><input type="radio" name="8_f" value="1" id="8_1" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="8_f" value="2" id="8_2" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="8_f" value="3" id="8_3" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="8_f" value="4" id="8_4" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="8_g" value="1" id="8_5" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="8_g" value="2" id="8_6" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="8_g" value="3" id="8_7" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="8_g" value="4" id="8_8" onchange="calculatePointsTotal(this);"></td>
+                            <td id="8_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                9. Frosteln oder Hitzewallung unabhangig von Temperatur
+                            </td>
+                            <td><input type="radio" name="9_f" value="1" id="9_1" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="9_f" value="2" id="9_2" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="9_f" value="3" id="9_3" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="9_f" value="4" id="9_4" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="9_g" value="1" id="9_5" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="9_g" value="2" id="9_6" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="9_g" value="3" id="9_7" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="9_g" value="4" id="9_8" onchange="calculatePointsTotal(this);"></td>
+                            <td id="9_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                10. Unruhe oder Zucken in bestimmten Muskeln
+                            </td>
+                            <td><input type="radio" name="10_f" value="1" id="10_1" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="10_f" value="2" id="10_2" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="10_f" value="3" id="10_3" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="10_f" value="4" id="10_4" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="10_g" value="1" id="10_5" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="10_g" value="2" id="10_6" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="10_g" value="3" id="10_7" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="10_g" value="4" id="10_8" onchange="calculatePointsTotal(this);"></td>
+                            <td id="10_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                11. Nachfragen trotz akustischer Verstandlichkeit
+                            </td>
+                            <td><input type="radio" name="11_f" value="1" id="11_1" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="11_f" value="2" id="11_2" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="11_f" value="3" id="11_3" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="11_f" value="4" id="11_4" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="11_g" value="1" id="11_5" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="11_g" value="2" id="11_6" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="11_g" value="3" id="11_7" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="11_g" value="4" id="11_8" onchange="calculatePointsTotal(this);"></td>
+                            <td id="11_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                12. Sich korperlich nicht richtig entspannen konnen
+                            </td>
+                            <td><input type="radio" name="12_f" value="1" id="12_1" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="12_f" value="2" id="12_2" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="12_f" value="3" id="12_3" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="12_f" value="4" id="12_4" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="12_g" value="1" id="12_5" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="12_g" value="2" id="12_6" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="12_g" value="3" id="12_7" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="12_g" value="4" id="12_8" onchange="calculatePointsTotal(this);"></td>
+                            <td id="12_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                13. Schmerzende Fusse, auch ohne langeres Stehen
+                            </td>
+                            <td><input type="radio" name="13_f" value="1" id="13_1" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="13_f" value="2" id="13_2" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="13_f" value="3" id="13_3" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="13_f" value="4" id="13_4" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="13_g" value="1" id="13_5" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="13_g" value="2" id="13_6" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="13_g" value="3" id="13_7" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="13_g" value="4" id="13_8" onchange="calculatePointsTotal(this);"></td>
+                            <td id="13_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                14. Das Gefuhl ,,es wachst mir alles uber den kop_f"
+                            </td>
+                            <td><input type="radio" name="14_f" value="1" id="14_1" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="14_f" value="2" id="14_2" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="14_f" value="3" id="14_3" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="14_f" value="4" id="14_4" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="14_g" value="1" id="14_5" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="14_g" value="2" id="14_6" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="14_g" value="3" id="14_7" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="14_g" value="4" id="14_8" onchange="calculatePointsTotal(this);"></td>
+                            <td id="14_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                15. Empfindlichkeit gegen Helligkeit und Larm
+                            </td>
+                            <td><input type="radio" name="15_f" value="1" id="15_1" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="15_f" value="2" id="15_2" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="15_f" value="3" id="15_3" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="15_f" value="4" id="15_4" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="15_g" value="1" id="15_5" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="15_g" value="2" id="15_6" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="15_g" value="3" id="15_7" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="15_g" value="4" id="15_8" onchange="calculatePointsTotal(this);"></td>
+                            <td id="15_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                16. Etwas vergessen, verlegen, sich verwahlen, verhoren
+                            </td>
+                            <td><input type="radio" name="16_f" value="1" id="16_1" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="16_f" value="2" id="16_2" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="16_f" value="3" id="16_3" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="16_f" value="4" id="16_4" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="16_g" value="1" id="16_5" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="16_g" value="2" id="16_6" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="16_g" value="3" id="16_7" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="16_g" value="4" id="16_8" onchange="calculatePointsTotal(this);"></td>
+                            <td id="16_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                17. Schmerzen in Nacken und Schultergegend
+                            </td>
+                            <td><input type="radio" name="17_f" value="1" id="17_1" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="17_f" value="2" id="17_2" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="17_f" value="3" id="17_3" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="17_f" value="4" id="17_4" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="17_g" value="1" id="17_5" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="17_g" value="2" id="17_6" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="17_g" value="3" id="17_7" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="17_g" value="4" id="17_8" onchange="calculatePointsTotal(this);"></td>
+                            <td id="17_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                18. Hin- und Heruberlegen vor wichtigen Entscheidungen
+                            </td>
+                            <td><input type="radio" name="18_f" value="1" id="18_1" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="18_f" value="2" id="18_2" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="18_f" value="3" id="18_3" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="18_f" value="4" id="18_4" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="18_g" value="1" id="18_5" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="18_g" value="2" id="18_6" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="18_g" value="3" id="18_7" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="18_g" value="4" id="18_8" onchange="calculatePointsTotal(this);"></td>
+                            <td id="18_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                19. Ubermssiges Schwitzen ohne einen ausseren Grund
+                            </td>
+                            <td><input type="radio" name="19_f" value="1" id="19_1" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="19_f" value="2" id="19_2" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="19_f" value="3" id="19_3" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="19_f" value="4" id="19_4" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="19_g" value="1" id="19_5" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="19_g" value="2" id="19_6" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="19_g" value="3" id="19_7" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="19_g" value="4" id="19_8" onchange="calculatePointsTotal(this);"></td>
+                            <td id="19_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                20. Eine der Situation nicht angemessene Traurigkeit
+                            </td>
+                            <td><input type="radio" name="20_f" value="1" id="20_1" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="20_f" value="2" id="20_2" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="20_f" value="3" id="20_3" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="20_f" value="4" id="20_4" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="20_g" value="1" id="20_5" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="20_g" value="2" id="20_6" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="20_g" value="3" id="20_7" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="20_g" value="4" id="20_8" onchange="calculatePointsTotal(this);"></td>
+                            <td id="20_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                21. Neigung zum Zittern beim Heben normaler Lasten
+                            </td>
+                            <td><input type="radio" name="21_f" value="1" id="21_1" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="21_f" value="2" id="21_2" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="21_f" value="3" id="21_3" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="21_f" value="4" id="21_4" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="21_g" value="1" id="21_5" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="21_g" value="2" id="21_6" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="21_g" value="3" id="21_7" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="21_g" value="4" id="21_8" onchange="calculatePointsTotal(this);"></td>
+                            <td id="21_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                22. Von einer Person aus der Fassung gebracht werden
+                            </td>
+                            <td><input type="radio" name="22_f" value="1" id="22_1" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="22_f" value="2" id="22_2" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="22_f" value="3" id="22_3" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="22_f" value="4" id="22_4" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="22_g" value="1" id="22_5" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="22_g" value="2" id="22_6" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="22_g" value="3" id="22_7" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="22_g" value="4" id="22_8" onchange="calculatePointsTotal(this);"></td>
+                            <td id="22_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                23. Kribbeln und Taubheit von Armen und Beinen
+                            </td>
+                            <td><input type="radio" name="23_f" value="1" id="23_1" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="23_f" value="2" id="23_2" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="23_f" value="3" id="23_3" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="23_f" value="4" id="23_4" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="23_g" value="1" id="23_5" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="23_g" value="2" id="23_6" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="23_g" value="3" id="23_7" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="23_g" value="4" id="23_8" onchange="calculatePointsTotal(this);"></td>
+                            <td id="23_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                24. Nicht so, wie man mochte, die Meinung sagen konnen
+                            </td>
+                            <td><input type="radio" name="24_f" value="1" id="24_1" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="24_f" value="2" id="24_2" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="24_f" value="3" id="24_3" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="24_f" value="4" id="24_4" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="24_g" value="1" id="24_5" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="24_g" value="2" id="24_6" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="24_g" value="3" id="24_7" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="24_g" value="4" id="24_8" onchange="calculatePointsTotal(this);"></td>
+                            <td id="24_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                25. Das Gefuhl, korperlich schnell erschopft zu sein
+                            </td>
+                            <td><input type="radio" name="25_f" value="1" id="25_1" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="25_f" value="2" id="25_2" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="25_f" value="3" id="25_3" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="25_f" value="4" id="25_4" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="25_g" value="1" id="25_5" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="25_g" value="2" id="25_6" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="25_g" value="3" id="25_7" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="25_g" value="4" id="25_8" onchange="calculatePointsTotal(this);"></td>
+                            <td id="25_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                26. Das Gefuhl, ,,mir bleibt beim Atmen die Luft we_g"
+                            </td>
+                            <td><input type="radio" name="26_f" value="1" id="26_1" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="26_f" value="2" id="26_2" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="26_f" value="3" id="26_3" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="26_f" value="4" id="26_4" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="26_g" value="1" id="26_5" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="26_g" value="2" id="26_6" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="26_g" value="3" id="26_7" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="26_g" value="4" id="26_8" onchange="calculatePointsTotal(this);"></td>
+                            <td id="26_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                27. Mehr als acht Stunden pro Nacht Schlaf brauchen
+                            </td>
+                            <td><input type="radio" name="27_f" value="1" id="27_1" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="27_f" value="2" id="27_2" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="27_f" value="3" id="27_3" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="27_f" value="4" id="27_4" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="27_g" value="1" id="27_5" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="27_g" value="2" id="27_6" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="27_g" value="3" id="27_7" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="27_g" value="4" id="27_8" onchange="calculatePointsTotal(this);"></td>
+                            <td id="27_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                28. Bei bestimmten Gelegenheiten rot werden
+                            </td>
+                            <td><input type="radio" name="28_f" value="1" id="28_1" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="28_f" value="2" id="28_2" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="28_f" value="3" id="28_3" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="28_f" value="4" id="28_4" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="28_g" value="1" id="28_5" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="28_g" value="2" id="28_6" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="28_g" value="3" id="28_7" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="28_g" value="4" id="28_8" onchange="calculatePointsTotal(this);"></td>
+                            <td id="28_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                29. Kreuz- oder Ruckenschmerzen, Verkrampfung
+                            </td>
+                            <td><input type="radio" name="29_f" value="1" id="29_1" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="29_f" value="2" id="29_2" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="29_f" value="3" id="29_3" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="29_f" value="4" id="29_4" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="29_g" value="1" id="29_5" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="29_g" value="2" id="29_6" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="29_g" value="3" id="29_7" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="29_g" value="4" id="29_8" onchange="calculatePointsTotal(this);"></td>
+                            <td id="29_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                30. Das Grefuhl von Verspannung im Brustbereich
+                            </td>
+                            <td><input type="radio" name="30_f" value="1" id="30_1" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="30_f" value="2" id="30_2" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="30_f" value="3" id="30_3" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="30_f" value="4" id="30_4" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="30_g" value="1" id="30_5" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="30_g" value="2" id="30_6" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="30_g" value="3" id="30_7" onchange="calculatePointsTotal(this);"></td>
+                            <td><input type="radio" name="30_g" value="4" id="30_8" onchange="calculatePointsTotal(this);"></td>
+                            <td id="30_9"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Haufigkeitsgrad: </strong>
+                                <strong>1: </strong>nie, selten; <strong>2: </strong> manchmal; <strong>3: </strong> haufig; <strong>4: </strong>sehr oft;
+                            </td>
+                            <td scope="row" colspan="8" align="right" rowspan="2" class="align-middle">
+                                Gesamtpunkte
+                            </td>
+                            <td id="totalPoints" rowspan="2" valign="middle" class="align-middle"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Starkegrad: </strong>
+                                <strong>1: </strong>null; <strong>2: </strong>kaum; <strong>3: </strong> massig; <strong>4: </strong>stark;
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col">
+                <h4>Ergebnis</h4>
+            </div>
+        </div>
+
+        <div id="result" class="row" style="display:none">
+            <div class="col">
+
+                <h5 id="firstLevelHeading">Emotional-affektive Ebene:</h5>
+                <p id="firstLevelResult-1" class="lead"  style="display:none">
+                    <strong>20-30 Punkte: </strong> Gratulation! lhr Kopf blockt jeden Stressreiz ab und sortgt fur
+                    ein ,,dickes Fell". Selbst in echten Stresssituationen haben Sie lhre Gefuhle im Griff.
+                </p>
+                <p id="firstLevelResult-2" class="lead"  style="display:none">
+                    <strong>31-40 Punkte: </strong> Der Stess zeigt erste Folgen im Grefuhlsleben. Vorsicht vor
+                    weiteren Belastungen.
+                </p>
+                <p id="firstLevelResult-3" class="lead"  style="display:none">
+                    <strong>ab 41 Punkte: </strong> Der Stresswert ist erhort: Versuchen Sie herauszufinden, wer oder
+                    was Sie gefuhlsmassig belastet. Starken Sie lhre Widerstandskraft gegen Stressreize, die unabanderlich
+                    sind.
+                </p>
+
+                <h5 id="secondLevelHeading">Vegetative Ebene</h5>
+                <p id="secondLevelResult-1" class="lead"  style="display:none">
+                    <strong>20-30 Punkte: </strong> lhnen schlagt so leicht nichts auf den magen. Beschwerden
+                    wie ,,vegetative Dystonie" sind lhnen unbekannt.
+                </p>
+                <p id="secondLevelResult-2" class="lead" style="display:none">
+                    <strong>31-40 Punkte: </strong> Der Stress zeigt erste Folgen im Inneren lhres Kopers. Vorsicht
+                    vor weiteren Belastungen.
+                </p>
+                <p id="secondLevelResult-3" class="lead" style="display:none">
+                    <strong>ab 41 Punkte: </strong> Sie schlucken zu viel Arger in sich hinein. Aus Unsicherheit
+                    oder Uberempfindlichkeit?
+                </p>
+
+                <h5 id="thirdLevelHeading">Motorische Ebene</h5>
+                <p id="thirdLevelResult-1" class="lead" style="display:none">
+                    <strong>20-30 Punkte: </strong> Bislang sind Sie dem Stress ,,problemlos davongelaufen".
+                    lhre Muskeln sind weder verspannt noch verkrampft.
+                </p>
+                <p id="thirdLevelResult-2" class="lead" style="display:none">
+                    <strong>31-40 Punkte: </strong> Der Stress zeigt erste Folgen im muskularen Bereich.
+                    Vorsicht vor weiteren Belastungen.
+                </p>
+                <p id="thirdLevelResult-3" class="lead" style="display:none">
+                    <strong>ab 41 Punkte: </strong> Was immer Sie bedruckt steigen Sie statt vor Wut auf die
+                    Barrikaden zum Beispiel auf den nachsten Berg.
+                </p>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row mt-4">
+            <div class="col">
+                <h4>Stresstest</h4>
+
+                <h5>Testanleitung:</h5>
+                <p class="lead">
+                    Uberlegen Sie bei jedem Symptom genau, wie oft und wie stark Sie diese Reaktion in
+                    der letzten Zeit an sich bemerkt haben, und machen Sie je ein Kreuz in die Spalten
+                    ,,haufigkeitsgrad" und ,,Starkegrad". Zahlen Sie anschliessend die beiden Werte hinter
+                    jedem der 30 Symptome zusammen, und tragen Sie das Ergebnis in der PunkteSpalte ein.
+                </p>
+
+                <h5>Testauswertung:</h5>
+                <p class="lead">
+                    Jetzterfolgt die Auswertung. Ubertragen Sie die Ergebnisse in die freien Kastchen hinter
+                    der entsprechenden Symptomziffer, und addieren Sie die Punkte getrennt nach den drei Ebenen.
+                </p>
+
+                <div class="row" hidden>
+                    <div class="col">
+
+                        <h5>Emotional-affektive Ebene</h5>
+                        <p class="lead">
+                            <strong>20-30 Punkte: </strong> Gratulation! lhr Kopf blockt jeden Stressreiz ab und sortgt fur
+                            ein ,,dickes Fell". Selbst in echten Stresssituationen haben Sie lhre Gefuhle im Griff.
+                        </p>
+
+                        <p class="lead">
+                            <strong>31-40 Punkte: </strong> Der Stess zeigt erste Folgen im Grefuhlsleben. Vorsicht vor
+                            weiteren Belastungen.
+                        </p>
+
+                        <p class="lead">
+                            <strong>ab 41 Punkte: </strong> Der Stresswert ist erhort: Versuchen Sie herauszufinden, wer oder
+                            was Sie gefuhlsmassig belastet. Starken Sie lhre Widerstandskraft gegen Stressreize, die unabanderlich
+                            sind.
+                        </p>
+                    </div>
+                    <div class="col-2">
+                        <table class="table table-bordered table-sm">
+                            <tbody>
+                                <tr>
+                                    <td>2</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>11</td>
+                                    <td></td>
+                                <tr>
+                                    <td>14</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>16</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>18</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>20</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>22</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>24</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row" hidden>
+                    <div class="col">
+
+                        <h5>Vegetative Ebene</h5>
+                        <p class="lead">
+                            <strong>20-30 Punkte: </strong> lhnen schlagt so leicht nichts auf den magen. Beschwerden
+                            wie ,,vegetative Dystonie" sind lhnen unbekannt.
+                        </p>
+
+                        <p class="lead">
+                            <strong>31-40 Punkte: </strong> Der Stress zeigt erste Folgen im Inneren lhres Kopers. Vorsicht
+                            vor weiteren Belastungen.
+                        </p>
+
+                        <p class="lead">
+                            <strong>ab 41 Punkte: </strong> Sie schlucken zu viel Arger in sich hinein. Aus Unsicherheit
+                            oder Uberempfindlichkeit?
+                        </p>
+                    </div>
+                    <div class="col-2">
+                        <table class="table table-bordered table-sm">
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td></td>
+                                <tr>
+                                    <td>15</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>19</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>23</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>26</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>27</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>28</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row" hidden>
+                    <div class="col">
+
+                        <h5>Motorische Ebene</h5>
+                        <p class="lead">
+                            <strong>20-30 Punkte: </strong> Bislang sind Sie dem Stress ,,problemlos davongelaufen".
+                            lhre Muskeln sind weder verspannt noch verkrampft.
+                        </p>
+
+                        <p class="lead">
+                            <strong>31-40 Punkte: </strong> Der Stress zeigt erste Folgen im muskularen Bereich.
+                            Vorsicht vor weiteren Belastungen.
+                        </p>
+
+                        <p class="lead">
+                            <strong>ab 41 Punkte: </strong> Was immer Sie bedruckt steigen Sie statt vor Wut auf die
+                            Barrikaden zum Beispiel auf den nachsten Berg.
+                        </p>
+                    </div>
+                    <div class="col-2">
+                        <table class="table table-bordered table-sm">
+                            <tbody>
+                                <tr>
+                                    <td>3</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>12</td>
+                                    <td></td>
+                                <tr>
+                                    <td>13</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>17</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>21</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>25</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>29</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>30</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/home.js"></script>
+</body>
+</html>
