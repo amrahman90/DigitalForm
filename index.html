@@ -1,0 +1,775 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    
+</head>
+<style>
+    .fa-check {
+        color: green !important;
+    }
+</style>
+<body>
+    <div class="row mt-4">
+        <div class="col">
+            <h2 class="text-center">Stresstest</h2>
+        </div>
+    </div>
+
+    <div class="mt-4 mx-3">
+        <div class="row">
+            <div class="col">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col" rowspan="2">
+                                <div class="row">
+                                    <div class="col">Stresssymptome</div>
+                                    <div class="col text-right">Reaktionen</div>
+                                </div>
+                            </th>
+                            <th scope="col" colspan="4">Haufigkeitsgrad</th>
+                            <th scope="col" colspan="4">Starkegrad</th>
+                            <th scope="col">Punkte</th>
+                        </tr>
+                        <tr>
+                            <td scope="col">1</td>
+                            <td scope="col">2</td>
+                            <td scope="col">3</td>
+                            <td scope="col">4</td>
+                            <td scope="col">1</td>
+                            <td scope="col">2</td>
+                            <td scope="col">3</td>
+                            <td scope="col">4</td>
+                            <td scope="col"></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row">
+                                1. Empfindlicher Magen, Vollegefuhl, Magendrucken
+                            </td>
+                            <td id="1f_1" onclick="checked(this)"></td>
+                            <td id="1f_2" onclick="checked(this)"></td>
+                            <td id="1f_3" onclick="checked(this)"></td>
+                            <td id="1f_4" onclick="checked(this)"></td>
+                            <td id="1g_1" onclick="checked(this)"></td>
+                            <td id="1g_2" onclick="checked(this)"></td>
+                            <td id="1g_3" onclick="checked(this)"></td>
+                            <td id="1g_4" onclick="checked(this)"></td>
+                            <td id="1_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                2. Angstgefuhle, ohne dass ein konkreter Grund vorliegt
+                            </td>
+                            <td id="2f_1" onclick="checked(this)"></td>
+                            <td id="2f_2" onclick="checked(this)"></td>
+                            <td id="2f_3" onclick="checked(this)"></td>
+                            <td id="2f_4" onclick="checked(this)"></td>
+                            <td id="2g_1" onclick="checked(this)"></td>
+                            <td id="2g_2" onclick="checked(this)"></td>
+                            <td id="2g_3" onclick="checked(this)"></td>
+                            <td id="2g_4" onclick="checked(this)"></td>
+                            <td id="2_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                3. Muskelkrampfe, auch ohne korperliche Anstrengung
+                            </td>
+                            <td id="3f_1" onclick="checked(this)"></td>
+                            <td id="3f_2" onclick="checked(this)"></td>
+                            <td id="3f_3" onclick="checked(this)"></td>
+                            <td id="3f_4" onclick="checked(this)"></td>
+                            <td id="3g_1" onclick="checked(this)"></td>
+                            <td id="3g_2" onclick="checked(this)"></td>
+                            <td id="3g_3" onclick="checked(this)"></td>
+                            <td id="3g_4" onclick="checked(this)"></td>
+                            <td id="3_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                4. Konzentrationsstorungen, Gedanken reissen ab
+                            </td>
+                            <td id="4f_1" onclick="checked(this)"></td>
+                            <td id="4f_2" onclick="checked(this)"></td>
+                            <td id="4f_3" onclick="checked(this)"></td>
+                            <td id="4f_4" onclick="checked(this)"></td>
+                            <td id="4g_1" onclick="checked(this)"></td>
+                            <td id="4g_2" onclick="checked(this)"></td>
+                            <td id="4g_3" onclick="checked(this)"></td>
+                            <td id="4g_4" onclick="checked(this)"></td>
+                            <td id="4_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                5. Kalte Hande oder Fusse ohne aussere Einflusse
+                            </td>
+                            <td id="5f_1" onclick="checked(this)"></td>
+                            <td id="5f_2" onclick="checked(this)"></td>
+                            <td id="5f_3" onclick="checked(this)"></td>
+                            <td id="5f_4" onclick="checked(this)"></td>
+                            <td id="5g_1" onclick="checked(this)"></td>
+                            <td id="5g_2" onclick="checked(this)"></td>
+                            <td id="5g_3" onclick="checked(this)"></td>
+                            <td id="5g_4" onclick="checked(this)"></td>
+                            <td id="5_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                6. Stotteransatze in bestimmten kritischen Situationen
+                            </td>
+                            <td id="6f_1" onclick="checked(this)"></td>
+                            <td id="6f_2" onclick="checked(this)"></td>
+                            <td id="6f_3" onclick="checked(this)"></td>
+                            <td id="6f_4" onclick="checked(this)"></td>
+                            <td id="6g_1" onclick="checked(this)"></td>
+                            <td id="6g_2" onclick="checked(this)"></td>
+                            <td id="6g_3" onclick="checked(this)"></td>
+                            <td id="6g_4" onclick="checked(this)"></td>
+                            <td id="6_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                7. Mudigkeit, obwohl lange genug und fest geschlafen
+                            </td>
+                            <td id="7f_1" onclick="checked(this)"></td>
+                            <td id="7f_2" onclick="checked(this)"></td>
+                            <td id="7f_3" onclick="checked(this)"></td>
+                            <td id="7f_4" onclick="checked(this)"></td>
+                            <td id="7g_1" onclick="checked(this)"></td>
+                            <td id="7g_2" onclick="checked(this)"></td>
+                            <td id="7g_3" onclick="checked(this)"></td>
+                            <td id="7g_4" onclick="checked(this)"></td>
+                            <td id="7_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                8. Ideenflucht - com Hundertsten ins Tausendste kommen
+                            </td>
+                            <td id="8f_1" onclick="checked(this)"></td>
+                            <td id="8f_2" onclick="checked(this)"></td>
+                            <td id="8f_3" onclick="checked(this)"></td>
+                            <td id="8f_4" onclick="checked(this)"></td>
+                            <td id="8g_1" onclick="checked(this)"></td>
+                            <td id="8g_2" onclick="checked(this)"></td>
+                            <td id="8g_3" onclick="checked(this)"></td>
+                            <td id="8g_4" onclick="checked(this)"></td>
+                            <td id="8_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                9. Frosteln oder Hitzewallung unabhangig von Temperatur
+                            </td>
+                            <td id="9f_1" onclick="checked(this)"></td>
+                            <td id="9f_2" onclick="checked(this)"></td>
+                            <td id="9f_3" onclick="checked(this)"></td>
+                            <td id="9f_4" onclick="checked(this)"></td>
+                            <td id="9g_1" onclick="checked(this)"></td>
+                            <td id="9g_2" onclick="checked(this)"></td>
+                            <td id="9g_3" onclick="checked(this)"></td>
+                            <td id="9g_4" onclick="checked(this)"></td>
+                            <td id="9_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                10. Unruhe oder Zucken in bestimmten Muskeln
+                            </td>
+                            <td id="10f_1" onclick="checked(this)"></td>
+                            <td id="10f_2" onclick="checked(this)"></td>
+                            <td id="10f_3" onclick="checked(this)"></td>
+                            <td id="10f_4" onclick="checked(this)"></td>
+                            <td id="10g_1" onclick="checked(this)"></td>
+                            <td id="10g_2" onclick="checked(this)"></td>
+                            <td id="10g_3" onclick="checked(this)"></td>
+                            <td id="10g_4" onclick="checked(this)"></td>
+                            <td id="10_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                11. Nachfragen trotz akustischer Verstandlichkeit
+                            </td>
+                            <td id="11f_1" onclick="checked(this)"></td>
+                            <td id="11f_2" onclick="checked(this)"></td>
+                            <td id="11f_3" onclick="checked(this)"></td>
+                            <td id="11f_4" onclick="checked(this)"></td>
+                            <td id="11g_1" onclick="checked(this)"></td>
+                            <td id="11g_2" onclick="checked(this)"></td>
+                            <td id="11g_3" onclick="checked(this)"></td>
+                            <td id="11g_4" onclick="checked(this)"></td>
+                            <td id="11_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                12. Sich korperlich nicht richtig entspannen konnen
+                            </td>
+                            <td id="12f_1" onclick="checked(this)"></td>
+                            <td id="12f_2" onclick="checked(this)"></td>
+                            <td id="12f_3" onclick="checked(this)"></td>
+                            <td id="12f_4" onclick="checked(this)"></td>
+                            <td id="12g_1" onclick="checked(this)"></td>
+                            <td id="12g_2" onclick="checked(this)"></td>
+                            <td id="12g_3" onclick="checked(this)"></td>
+                            <td id="12g_4" onclick="checked(this)"></td>
+                            <td id="12_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                13. Schmerzende Fusse, auch ohne langeres Stehen
+                            </td>
+                            <td id="13f_1" onclick="checked(this)"></td>
+                            <td id="13f_2" onclick="checked(this)"></td>
+                            <td id="13f_3" onclick="checked(this)"></td>
+                            <td id="13f_4" onclick="checked(this)"></td>
+                            <td id="13g_1" onclick="checked(this)"></td>
+                            <td id="13g_2" onclick="checked(this)"></td>
+                            <td id="13g_3" onclick="checked(this)"></td>
+                            <td id="13g_4" onclick="checked(this)"></td>
+                            <td id="13_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                14. Das Gefuhl ,,es wachst mir alles uber den kop_f"
+                            </td>
+                            <td id="14f_1" onclick="checked(this)"></td>
+                            <td id="14f_2" onclick="checked(this)"></td>
+                            <td id="14f_3" onclick="checked(this)"></td>
+                            <td id="14f_4" onclick="checked(this)"></td>
+                            <td id="14g_1" onclick="checked(this)"></td>
+                            <td id="14g_2" onclick="checked(this)"></td>
+                            <td id="14g_3" onclick="checked(this)"></td>
+                            <td id="14g_4" onclick="checked(this)"></td>
+                            <td id="14_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                15. Empfindlichkeit gegen Helligkeit und Larm
+                            </td>
+                            <td id="15f_1" onclick="checked(this)"></td>
+                            <td id="15f_2" onclick="checked(this)"></td>
+                            <td id="15f_3" onclick="checked(this)"></td>
+                            <td id="15f_4" onclick="checked(this)"></td>
+                            <td id="15g_1" onclick="checked(this)"></td>
+                            <td id="15g_2" onclick="checked(this)"></td>
+                            <td id="15g_3" onclick="checked(this)"></td>
+                            <td id="15g_4" onclick="checked(this)"></td>
+                            <td id="15_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                16. Etwas vergessen, verlegen, sich verwahlen, verhoren
+                            </td>
+                            <td id="16f_1" onclick="checked(this)"></td>
+                            <td id="16f_2" onclick="checked(this)"></td>
+                            <td id="16f_3" onclick="checked(this)"></td>
+                            <td id="16f_4" onclick="checked(this)"></td>
+                            <td id="16g_1" onclick="checked(this)"></td>
+                            <td id="16g_2" onclick="checked(this)"></td>
+                            <td id="16g_3" onclick="checked(this)"></td>
+                            <td id="16g_4" onclick="checked(this)"></td>
+                            <td id="16_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                17. Schmerzen in Nacken und Schultergegend
+                            </td>
+                            <td id="17f_1" onclick="checked(this)"></td>
+                            <td id="17f_2" onclick="checked(this)"></td>
+                            <td id="17f_3" onclick="checked(this)"></td>
+                            <td id="17f_4" onclick="checked(this)"></td>
+                            <td id="17g_1" onclick="checked(this)"></td>
+                            <td id="17g_2" onclick="checked(this)"></td>
+                            <td id="17g_3" onclick="checked(this)"></td>
+                            <td id="17g_4" onclick="checked(this)"></td>
+                            <td id="17_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                18. Hin- und Heruberlegen vor wichtigen Entscheidungen
+                            </td>
+                            <td id="18f_1" onclick="checked(this)"></td>
+                            <td id="18f_2" onclick="checked(this)"></td>
+                            <td id="18f_3" onclick="checked(this)"></td>
+                            <td id="18f_4" onclick="checked(this)"></td>
+                            <td id="18g_1" onclick="checked(this)"></td>
+                            <td id="18g_2" onclick="checked(this)"></td>
+                            <td id="18g_3" onclick="checked(this)"></td>
+                            <td id="18g_4" onclick="checked(this)"></td>
+                            <td id="18_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                19. Ubermssiges Schwitzen ohne einen ausseren Grund
+                            </td>
+                            <td id="19f_1" onclick="checked(this)"></td>
+                            <td id="19f_2" onclick="checked(this)"></td>
+                            <td id="19f_3" onclick="checked(this)"></td>
+                            <td id="19f_4" onclick="checked(this)"></td>
+                            <td id="19g_1" onclick="checked(this)"></td>
+                            <td id="19g_2" onclick="checked(this)"></td>
+                            <td id="19g_3" onclick="checked(this)"></td>
+                            <td id="19g_4" onclick="checked(this)"></td>
+                            <td id="19_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                20. Eine der Situation nicht angemessene Traurigkeit
+                            </td>
+                            <td id="20f_1" onclick="checked(this)"></td>
+                            <td id="20f_2" onclick="checked(this)"></td>
+                            <td id="20f_3" onclick="checked(this)"></td>
+                            <td id="20f_4" onclick="checked(this)"></td>
+                            <td id="20g_1" onclick="checked(this)"></td>
+                            <td id="20g_2" onclick="checked(this)"></td>
+                            <td id="20g_3" onclick="checked(this)"></td>
+                            <td id="20g_4" onclick="checked(this)"></td>
+                            <td id="20_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                21. Neigung zum Zittern beim Heben normaler Lasten
+                            </td>
+                            <td id="21f_1" onclick="checked(this)"></td>
+                            <td id="21f_2" onclick="checked(this)"></td>
+                            <td id="21f_3" onclick="checked(this)"></td>
+                            <td id="21f_4" onclick="checked(this)"></td>
+                            <td id="21g_1" onclick="checked(this)"></td>
+                            <td id="21g_2" onclick="checked(this)"></td>
+                            <td id="21g_3" onclick="checked(this)"></td>
+                            <td id="21g_4" onclick="checked(this)"></td>
+                            <td id="21_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                22. Von einer Person aus der Fassung gebracht werden
+                            </td>
+                            <td id="22f_1" onclick="checked(this)"></td>
+                            <td id="22f_2" onclick="checked(this)"></td>
+                            <td id="22f_3" onclick="checked(this)"></td>
+                            <td id="22f_4" onclick="checked(this)"></td>
+                            <td id="22g_1" onclick="checked(this)"></td>
+                            <td id="22g_2" onclick="checked(this)"></td>
+                            <td id="22g_3" onclick="checked(this)"></td>
+                            <td id="22g_4" onclick="checked(this)"></td>
+                            <td id="22_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                23. Kribbeln und Taubheit von Armen und Beinen
+                            </td>
+                            <td id="23f_1" onclick="checked(this)"></td>
+                            <td id="23f_2" onclick="checked(this)"></td>
+                            <td id="23f_3" onclick="checked(this)"></td>
+                            <td id="23f_4" onclick="checked(this)"></td>
+                            <td id="23g_1" onclick="checked(this)"></td>
+                            <td id="23g_2" onclick="checked(this)"></td>
+                            <td id="23g_3" onclick="checked(this)"></td>
+                            <td id="23g_4" onclick="checked(this)"></td>
+                            <td id="23_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                24. Nicht so, wie man mochte, die Meinung sagen konnen
+                            </td>
+                            <td id="24f_1" onclick="checked(this)"></td>
+                            <td id="24f_2" onclick="checked(this)"></td>
+                            <td id="24f_3" onclick="checked(this)"></td>
+                            <td id="24f_4" onclick="checked(this)"></td>
+                            <td id="24g_1" onclick="checked(this)"></td>
+                            <td id="24g_2" onclick="checked(this)"></td>
+                            <td id="24g_3" onclick="checked(this)"></td>
+                            <td id="24g_4" onclick="checked(this)"></td>
+                            <td id="24_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                25. Das Gefuhl, korperlich schnell erschopft zu sein
+                            </td>
+                            <td id="25f_1" onclick="checked(this)"></td>
+                            <td id="25f_2" onclick="checked(this)"></td>
+                            <td id="25f_3" onclick="checked(this)"></td>
+                            <td id="25f_4" onclick="checked(this)"></td>
+                            <td id="25g_1" onclick="checked(this)"></td>
+                            <td id="25g_2" onclick="checked(this)"></td>
+                            <td id="25g_3" onclick="checked(this)"></td>
+                            <td id="25g_4" onclick="checked(this)"></td>
+                            <td id="25_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                26. Das Gefuhl, ,,mir bleibt beim Atmen die Luft we_g"
+                            </td>
+                            <td id="26f_1" onclick="checked(this)"></td>
+                            <td id="26f_2" onclick="checked(this)"></td>
+                            <td id="26f_3" onclick="checked(this)"></td>
+                            <td id="26f_4" onclick="checked(this)"></td>
+                            <td id="26g_1" onclick="checked(this)"></td>
+                            <td id="26g_2" onclick="checked(this)"></td>
+                            <td id="26g_3" onclick="checked(this)"></td>
+                            <td id="26g_4" onclick="checked(this)"></td>
+                            <td id="26_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                27. Mehr als acht Stunden pro Nacht Schlaf brauchen
+                            </td>
+                            <td id="27f_1" onclick="checked(this)"></td>
+                            <td id="27f_2" onclick="checked(this)"></td>
+                            <td id="27f_3" onclick="checked(this)"></td>
+                            <td id="27f_4" onclick="checked(this)"></td>
+                            <td id="27_1" onclick="checked(this)"></td>
+                            <td id="27_2" onclick="checked(this)"></td>
+                            <td id="27_3" onclick="checked(this)"></td>
+                            <td id="27_4" onclick="checked(this)"></td>
+                            <td id="27_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                28. Bei bestimmten Gelegenheiten rot werden
+                            </td>
+                            <td id="28f_1" onclick="checked(this)"></td>
+                            <td id="28f_2" onclick="checked(this)"></td>
+                            <td id="28f_3" onclick="checked(this)"></td>
+                            <td id="28f_4" onclick="checked(this)"></td>
+                            <td id="28_1" onclick="checked(this)"></td>
+                            <td id="28_2" onclick="checked(this)"></td>
+                            <td id="28_3" onclick="checked(this)"></td>
+                            <td id="28_4" onclick="checked(this)"></td>
+                            <td id="28_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                29. Kreuz- oder Ruckenschmerzen, Verkrampfung
+                            </td>
+                            <td id="29f_1" onclick="checked(this)"></td>
+                            <td id="29f_2" onclick="checked(this)"></td>
+                            <td id="29f_3" onclick="checked(this)"></td>
+                            <td id="29f_4" onclick="checked(this)"></td>
+                            <td id="29_1" onclick="checked(this)"></td>
+                            <td id="29_2" onclick="checked(this)"></td>
+                            <td id="29_3" onclick="checked(this)"></td>
+                            <td id="29_4" onclick="checked(this)"></td>
+                            <td id="29_9"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                30. Das Grefuhl von Verspannung im Brustbereich
+                            </td>
+                            <td id="30f_1" onclick="checked(this)"></td>
+                            <td id="30f_2" onclick="checked(this)"></td>
+                            <td id="30f_3" onclick="checked(this)"></td>
+                            <td id="30f_4" onclick="checked(this)"></td>
+                            <td id="30_1" onclick="checked(this)"></td>
+                            <td id="30_2" onclick="checked(this)"></td>
+                            <td id="30_3" onclick="checked(this)"></td>
+                            <td id="30_4" onclick="checked(this)"></td>
+                            <td id="30_9"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Haufigkeitsgrad: </strong>
+                                <strong>1: </strong>nie, selten; <strong>2: </strong> manchmal; <strong>3: </strong> haufig; <strong>4: </strong>sehr oft;
+                            </td>
+                            <td scope="row" colspan="10" align="right" rowspan="2" class="align-middle">
+                                <button id="result-button" type="button" class="btn btn-success" onclick="getresults()" disabled>Get Results</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Starkegrad: </strong>
+                                <strong>1: </strong>null; <strong>2: </strong>kaum; <strong>3: </strong> massig; <strong>4: </strong>stark;
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col">
+                <h4>Ergebnis</h4>
+            </div>
+        </div>
+
+        <div id="result" class="row" style="display:none">
+            <div class="col">
+
+                <h5 id="firstLevelHeading">Emotional-affektive Ebene:</h5>
+                <p id="firstLevelResult-1" class="lead"  style="display:none">
+                    <strong>20-30 Punkte: </strong> Gratulation! lhr Kopf blockt jeden Stressreiz ab und sortgt fur
+                    ein ,,dickes Fell". Selbst in echten Stresssituationen haben Sie lhre Gefuhle im Griff.
+                </p>
+                <p id="firstLevelResult-2" class="lead"  style="display:none">
+                    <strong>31-40 Punkte: </strong> Der Stess zeigt erste Folgen im Grefuhlsleben. Vorsicht vor
+                    weiteren Belastungen.
+                </p>
+                <p id="firstLevelResult-3" class="lead"  style="display:none">
+                    <strong>ab 41 Punkte: </strong> Der Stresswert ist erhort: Versuchen Sie herauszufinden, wer oder
+                    was Sie gefuhlsmassig belastet. Starken Sie lhre Widerstandskraft gegen Stressreize, die unabanderlich
+                    sind.
+                </p>
+
+                <h5 id="secondLevelHeading">Vegetative Ebene</h5>
+                <p id="secondLevelResult-1" class="lead"  style="display:none">
+                    <strong>20-30 Punkte: </strong> lhnen schlagt so leicht nichts auf den magen. Beschwerden
+                    wie ,,vegetative Dystonie" sind lhnen unbekannt.
+                </p>
+                <p id="secondLevelResult-2" class="lead" style="display:none">
+                    <strong>31-40 Punkte: </strong> Der Stress zeigt erste Folgen im Inneren lhres Kopers. Vorsicht
+                    vor weiteren Belastungen.
+                </p>
+                <p id="secondLevelResult-3" class="lead" style="display:none">
+                    <strong>ab 41 Punkte: </strong> Sie schlucken zu viel Arger in sich hinein. Aus Unsicherheit
+                    oder Uberempfindlichkeit?
+                </p>
+
+                <h5 id="thirdLevelHeading">Motorische Ebene</h5>
+                <p id="thirdLevelResult-1" class="lead" style="display:none">
+                    <strong>20-30 Punkte: </strong> Bislang sind Sie dem Stress ,,problemlos davongelaufen".
+                    lhre Muskeln sind weder verspannt noch verkrampft.
+                </p>
+                <p id="thirdLevelResult-2" class="lead" style="display:none">
+                    <strong>31-40 Punkte: </strong> Der Stress zeigt erste Folgen im muskularen Bereich.
+                    Vorsicht vor weiteren Belastungen.
+                </p>
+                <p id="thirdLevelResult-3" class="lead" style="display:none">
+                    <strong>ab 41 Punkte: </strong> Was immer Sie bedruckt steigen Sie statt vor Wut auf die
+                    Barrikaden zum Beispiel auf den nachsten Berg.
+                </p>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row mt-4">
+            <div class="col">
+                <h4>Stresstest</h4>
+
+                <h5>Testanleitung:</h5>
+                <p class="lead">
+                    Uberlegen Sie bei jedem Symptom genau, wie oft und wie stark Sie diese Reaktion in
+                    der letzten Zeit an sich bemerkt haben, und machen Sie je ein Kreuz in die Spalten
+                    ,,haufigkeitsgrad" und ,,Starkegrad".
+
+                <div class="row" hidden>
+                    <div class="col">
+
+                        <h5>Emotional-affektive Ebene</h5>
+                        <p class="lead">
+                            <strong>20-30 Punkte: </strong> Gratulation! lhr Kopf blockt jeden Stressreiz ab und sortgt fur
+                            ein ,,dickes Fell". Selbst in echten Stresssituationen haben Sie lhre Gefuhle im Griff.
+                        </p>
+
+                        <p class="lead">
+                            <strong>31-40 Punkte: </strong> Der Stess zeigt erste Folgen im Grefuhlsleben. Vorsicht vor
+                            weiteren Belastungen.
+                        </p>
+
+                        <p class="lead">
+                            <strong>ab 41 Punkte: </strong> Der Stresswert ist erhort: Versuchen Sie herauszufinden, wer oder
+                            was Sie gefuhlsmassig belastet. Starken Sie lhre Widerstandskraft gegen Stressreize, die unabanderlich
+                            sind.
+                        </p>
+                    </div>
+                    <div class="col-2">
+                        <table class="table table-bordered table-sm">
+                            <tbody>
+                                <tr>
+                                    <td>2</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>11</td>
+                                    <td></td>
+                                <tr>
+                                    <td>14</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>16</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>18</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>20</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>22</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>24</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row" hidden>
+                    <div class="col">
+
+                        <h5>Vegetative Ebene</h5>
+                        <p class="lead">
+                            <strong>20-30 Punkte: </strong> lhnen schlagt so leicht nichts auf den magen. Beschwerden
+                            wie ,,vegetative Dystonie" sind lhnen unbekannt.
+                        </p>
+
+                        <p class="lead">
+                            <strong>31-40 Punkte: </strong> Der Stress zeigt erste Folgen im Inneren lhres Kopers. Vorsicht
+                            vor weiteren Belastungen.
+                        </p>
+
+                        <p class="lead">
+                            <strong>ab 41 Punkte: </strong> Sie schlucken zu viel Arger in sich hinein. Aus Unsicherheit
+                            oder Uberempfindlichkeit?
+                        </p>
+                    </div>
+                    <div class="col-2">
+                        <table class="table table-bordered table-sm">
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td></td>
+                                <tr>
+                                    <td>15</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>19</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>23</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>26</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>27</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>28</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row" hidden>
+                    <div class="col">
+
+                        <h5>Motorische Ebene</h5>
+                        <p class="lead">
+                            <strong>20-30 Punkte: </strong> Bislang sind Sie dem Stress ,,problemlos davongelaufen".
+                            lhre Muskeln sind weder verspannt noch verkrampft.
+                        </p>
+
+                        <p class="lead">
+                            <strong>31-40 Punkte: </strong> Der Stress zeigt erste Folgen im muskularen Bereich.
+                            Vorsicht vor weiteren Belastungen.
+                        </p>
+
+                        <p class="lead">
+                            <strong>ab 41 Punkte: </strong> Was immer Sie bedruckt steigen Sie statt vor Wut auf die
+                            Barrikaden zum Beispiel auf den nachsten Berg.
+                        </p>
+                    </div>
+                    <div class="col-2">
+                        <table class="table table-bordered table-sm">
+                            <tbody>
+                                <tr>
+                                    <td>3</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>12</td>
+                                    <td></td>
+                                <tr>
+                                    <td>13</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>17</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>21</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>25</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>29</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>30</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="./src/assets/js/home.js"></script>
+</body>
+</html>
