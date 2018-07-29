@@ -118,6 +118,10 @@ let getresults = () => {
     }
     $("div#result").show('slow');
 
+    $("#firstLevelHeading").append("<b> ( "+ emotionalPoints + " ) </b>");
+    $("#secondLevelHeading").append("<b> ( "+ vegetativePoints + " ) </b>");
+    $("#thirdLevelHeading").append("<b> ( "+ motorischePoints + " ) </b>");
+
     //show emotional result
     if(emotionalPoints > 40) {
         $("p#firstLevelResult-3").show('slow');
